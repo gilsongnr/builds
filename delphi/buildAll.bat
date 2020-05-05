@@ -80,7 +80,8 @@ set pathOut=%PathOrig%\lib\%dversion%\Win32\%configdir%
 del %pathOut%\*.dcu /s > deleteds.txt
 
 rem ***************************************************************
-set OutputDCUs=%pathOut%\fcl
+set OutputDCUsFCL=%pathOut%\fcl
+set OutputDCUs=%OutputDCUsFCL%
 
 call :ShowCab (FCL) 
 
@@ -99,12 +100,31 @@ call :ExecuteCmd Build1.dpr
 if not %ERRORLEVEL% == 0 GOTO Error
 echo %msgSucess%
 
-set units=%OutputDCUs%
+set units=%OutputDCUsFCL%
+
+
+
+
+
+rem ***************************************************************
+set OutputDCUs=%pathOut%\db
+call :ShowCab (DB) 
+
+set aliases=%aliases%;data
+
+call :ExecuteCmd BuildDB.dpr 
+
+if not %ERRORLEVEL% == 0 GOTO Error
+echo %msgSucess%
+
+
 
 rem ***************************************************************
 set OutputDCUs=%pathOut%\lcl
 cd D:\projects\source\liblcl\delphi\build
 call :ShowCab (LCL) 
+
+if not %dversion% == D2007 set aliases=%aliases%
 
 rem set paramextra= -NSSystem;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl;Vcl.Imaging;Vcl.Samples;Vcl.Touch;Vcl.Shell
 set DJedi=D25\win32
@@ -124,8 +144,11 @@ if not %ERRORLEVEL% == 0 GOTO Error
 echo %msgSucess%
 
 
-set units=%units%;%OutputDCUs%
+
+
+
 rem ***************************************************************
+set units=%units%;%pathOut%\db;%OutputDCUs%
 set OutputDCUs=%pathOut%\db
 cd D:\projects\source\liblcl\delphi\build
 call :ShowCab (DB) 
@@ -139,13 +162,15 @@ set units=%units%;d:\Projects\source\delphi\Componentes\Quickrep5
 set aliasesSave=%aliases%
 set aliases=%aliases%;data
 
-call :ExecuteCmd BuildDB.dpr 
+call :ExecuteCmd BuildLCL_DB.dpr 
 
 if not %ERRORLEVEL% == 0 GOTO Error
 echo %msgSucess%
 
 set units=%unitsSave%
 set aliases=%aliasesSave%
+
+
 
 
 rem ***************************************************************

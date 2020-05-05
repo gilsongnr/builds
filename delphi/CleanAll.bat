@@ -1,4 +1,4 @@
-del /s D:\projects\build\delphi\*.dcu
+del /s D:\projects\builds\delphi\*.dcu
 del /s d:\Hd_ibo\*.dcu
 del /s D:\projects\source\LibFCL\*.dcu
 del /s D:\projects\source\LibLCL\*.dcu
