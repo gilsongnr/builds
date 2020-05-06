@@ -82,7 +82,7 @@ set pOutputDCUs=%pOutputDCUsFCL%
 call :ShowCab (FCL) 
 
 set includes=D:\projects\source\libfcl\includes
-set aliases=System;Winapi;System.Win
+set aliases=System;Winapi;System.Win;vcl
 set ExecPath=%ExecPath% %config%
 set units=
 set resources=

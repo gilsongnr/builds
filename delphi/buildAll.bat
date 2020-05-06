@@ -124,7 +124,6 @@ set OutputDCUs=%pathOut%\lcl
 cd D:\projects\source\liblcl\delphi\build
 call :ShowCab (LCL) 
 
-if not %dversion% == D2007 set aliases=%aliases%
 
 rem set paramextra= -NSSystem;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl;Vcl.Imaging;Vcl.Samples;Vcl.Touch;Vcl.Shell
 set DJedi=D25\win32

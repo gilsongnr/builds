@@ -2,7 +2,7 @@
 
 rem set delphilibs=D:\projects\source\delphi\Libs\resources\
 rem set delphiIBO=D:\Hd_ibo\Projetos\Delphi\Libs\resources\
-set delphilibs=d:\Projects\source\Delphi\Libs
+set delphilibs=D:\projects\source\liblcl\delphi
 set delphilibsres=%delphilibs%\resources
 
 set delphiIBO=D:\Hd_ibo\Projetos\Delphi\Libs
@@ -24,34 +24,34 @@ copy %delphiIBO%\UDinCons.dfm                 %delphiIBOres%
 
 copy d:\Projects\source\progs\utils\Registro\Libs\cli\delphi\uRegistrFrm.dfm  %delphilibsres%
 copy %delphilibs%\GSkins.RES                    %delphilibsres%
-copy d:\Projects\source\delphi\Componentes\G_Pak\src\GFlatBtns.RES                 %delphilibsres%
+copy D:\projects\source\liblcl\delphi\components\G_Pak\src\GFlatBtns.RES      %delphilibsres%
 copy %delphilibs%\Gimagens.RES                  %delphilibsres%
 copy %delphilibs%\Gimagens2.RES                 %delphilibsres%
 copy %delphilibs%\UGaugPri.dfm                  %delphilibsres%
-copy %delphilibs%\uQrPrev1.dfm                 %delphilibsres%
+copy %delphilibs%\db\uQrPrev1.dfm                 %delphilibsres%
 copy %delphilibs%\uReducao.dfm                 %delphilibsres%
 copy %delphilibs%\uVisuRel.dfm                 %delphilibsres%
 copy %delphilibs%\URelacDlg.dfm                %delphilibsres%
-copy %delphilibs%\uSplash.dfm                  %delphilibsres%
+copy %delphilibs%\db\uSplash.dfm                  %delphilibsres%
 copy %delphilibs%\uMostraTroco.dfm             %delphilibsres%
 rem copy %delphilibs%\uConfPrn.dfm                 %delphilibsres%
 rem copy %delphilibs%\UCNP_CPF.dfm                 %delphilibsres%
 copy %delphilibs%\uDlgAnivers.dfm              %delphilibsres%
 copy %delphilibs%\uConfProtec.dfm              %delphilibsres%
 copy d:\Projects\source\LibLCL\uCnpjCpfDlg.dfm              %delphilibsres%
-copy %delphilibs%_DB\uBuscaDB.dfm                 %delphilibsres%
-copy %delphilibs%_DB\uBuscaDlgCustom.dfm          %delphilibsres%
+copy %delphilibs%\DB\uBuscaDB.dfm                 %delphilibsres%
+copy %delphilibs%\DB\uBuscaDlgCustom.dfm          %delphilibsres%
 copy %delphilibs%\uFrameDescAcres.dfm          %delphilibsres%
 copy %delphilibs%\uFMessages.dfm               %delphilibsres%
 copy %delphilibs%\UniFormD1.dfm                %delphilibsres%
 copy %delphilibs%\uPrnsele.dfm                 %delphilibsres%
-copy %delphilibs%\uModCart.dfm                 %delphilibsres%
-copy %delphilibs%\uImpCheq.dfm                 %delphilibsres%
+copy %delphilibs%\db\uModCart.dfm                 %delphilibsres%
+copy %delphilibs%\db\uImpCheq.dfm                 %delphilibsres%
 rem copy %delphilibs%\UEditEtiquetas.dfm           %delphilibsres%
 copy %delphilibs%\Rece_Pres.dfm                 %delphilibsres%
 copy %delphilibs%\UVisuPrn.dfm                  %delphilibsres%
 copy %delphilibs%\UCalenda.dfm                  %delphilibsres%
-copy %delphilibs%\QModCart.dfm                  %delphilibsres%
+copy %delphilibs%\db\QModCart.dfm                  %delphilibsres%
 copy %delphilibs%\UEditEtiqFormat.dfm           %delphilibsres%
 copy %delphilibs%\ParaFmt.dfm                   %delphilibsres%
 copy %delphilibs%\uMostraMens.dfm               %delphilibsres%
