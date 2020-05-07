@@ -150,7 +150,7 @@ rem ***************************************************************
 set units=%units%;%pathOut%\db;%OutputDCUs%
 set OutputDCUs=%pathOut%\db
 cd D:\projects\source\liblcl\delphi\build
-call :ShowCab (DB) 
+call :ShowCab (LCL_DB) 
 
 if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\Win32\Release
 
