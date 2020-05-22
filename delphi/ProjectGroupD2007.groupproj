@@ -1,0 +1,49 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{d1214bd3-daa3-4ab3-83d7-5d507dbd745c}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Build1_D2007">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1_D2007.dproj" Targets="" />
+  </Target>
+  <Target Name="Build1_D2007:Clean">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1_D2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Build1_D2007:Make">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1_D2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="BuildDB_D2007">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB_D2007.dproj" Targets="" />
+  </Target>
+  <Target Name="BuildDB_D2007:Clean">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB_D2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="BuildDB_D2007:Make">
+    <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB_D2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="BuildLCL - D2007">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL - D2007.dproj" Targets="" />
+  </Target>
+  <Target Name="BuildLCL - D2007:Clean">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL - D2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="BuildLCL - D2007:Make">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL - D2007.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Build1_D2007;BuildDB_D2007;BuildLCL - D2007" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Build1_D2007:Clean;BuildDB_D2007:Clean;BuildLCL - D2007:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Build1_D2007:Make;BuildDB_D2007:Make;BuildLCL - D2007:Make" />
+  </Target>
+</Project>
