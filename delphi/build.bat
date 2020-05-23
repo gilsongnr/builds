@@ -23,7 +23,21 @@ if "%1"=="D2007" goto ConfigD2007
 set dversion=xe
 set pathDelphi=c:\program files (x86)\embarcadero\studio\19.0\
 set configDebug=-B -Q -TX.exe
-set configDebug=%configDebug% -W-IMPLICIT_STRING_CAST -W-IMPLICIT_STRING_CAST_LOSS --inline:off
+
+set configDebug=%configDebug% "-W-GARBAGE"
+set configDebug=%configDebug% "-W^BOUNDS_ERROR"
+set configDebug=%configDebug% "-W^CASE_LABEL_RANGE"
+set configDebug=%configDebug% "-W^CONSTRUCTING_ABSTRACT"
+set configDebug=%configDebug% "-W^COMPARISON_FALSE" 
+set configDebug=%configDebug% "-W^COMPARISON_TRUE"
+set configDebug=%configDebug% "-W^NO_RETVAL"
+set configDebug=%configDebug% "-W^USE_BEFORE_DEF"
+set configDebug=%configDebug% "-W^SUSPICIOUS_TYPECAST"
+set configDebug=%configDebug% "-W-WIDECHAR_REDUCED" 
+set configDebug=%configDebug% "-W-IMPLICIT_STRING_CAST"
+set configDebug=%configDebug% "-W^IMPLICIT_STRING_CAST_LOSS"
+set configDebug=%configDebug% "--inline:off"
+
 set configRelease=-$D0 -$L- -$Y- %configDebug%
 set ExecPath="%pathDelphi%bin\dcc32.exe" 
 
@@ -34,6 +48,18 @@ goto Prompt
 set dversion=D2007
 set pathDelphi=c:\program files (x86)\codegear\rad studio\5.0\
 set configDebug=-B -Q 
+
+set configDebug=%configDebug% "-W-GARBAGE"
+rem set configDebug=%configDebug% "-W^BOUNDS_ERROR"
+rem set configDebug=%configDebug% "-W^CASE_LABEL_RANGE"
+rem set configDebug=%configDebug% "-W^CONSTRUCTING_ABSTRACT"
+set configDebug=%configDebug% "-W-COMPARISON_FALSE" 
+set configDebug=%configDebug% "-W-COMPARISON_TRUE"
+set configDebug=%configDebug% "-W-NO_RETVAL"
+set configDebug=%configDebug% "-W-USE_BEFORE_DEF"
+set configDebug=%configDebug% "-W-SUSPICIOUS_TYPECAST"
+set configDebug=%configDebug% "-W-WIDECHAR_REDUCED" 
+
 set configRelease=-$D0 -$L- -$Y- %configDebug%
 set ExecPath="%pathDelphi%bin\dcc32.exe" 
 
