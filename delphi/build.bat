@@ -173,7 +173,7 @@ call :ShowCab (LCL_DB)
 
 if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\Win32\Release
 set unitsSave=%units%
-set units=%units%;%pOutputDCUs%;d:\Projects\source\delphi\Componentes\Quickrep5
+set units=%units%;%pOutputDCUs%;d:\Projects\source\liblcl\delphi\Components\Quickrep5
 
 set aliasesSave=%aliases%
 set aliases=%aliases%;data

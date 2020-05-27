@@ -37,13 +37,22 @@
   <Target Name="BuildLCL - D2007:Make">
     <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL - D2007.dproj" Targets="Make" />
   </Target>
+  <Target Name="BuildLCL_DB - D2007">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB - D2007.dproj" Targets="" />
+  </Target>
+  <Target Name="BuildLCL_DB - D2007:Clean">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB - D2007.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="BuildLCL_DB - D2007:Make">
+    <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB - D2007.dproj" Targets="Make" />
+  </Target>
   <Target Name="Build">
-    <CallTarget Targets="Build1_D2007;BuildDB_D2007;BuildLCL - D2007" />
+    <CallTarget Targets="Build1_D2007;BuildDB_D2007;BuildLCL - D2007;BuildLCL_DB - D2007" />
   </Target>
   <Target Name="Clean">
-    <CallTarget Targets="Build1_D2007:Clean;BuildDB_D2007:Clean;BuildLCL - D2007:Clean" />
+    <CallTarget Targets="Build1_D2007:Clean;BuildDB_D2007:Clean;BuildLCL - D2007:Clean;BuildLCL_DB - D2007:Clean" />
   </Target>
   <Target Name="Make">
-    <CallTarget Targets="Build1_D2007:Make;BuildDB_D2007:Make;BuildLCL - D2007:Make" />
+    <CallTarget Targets="Build1_D2007:Make;BuildDB_D2007:Make;BuildLCL - D2007:Make;BuildLCL_DB - D2007:Make" />
   </Target>
 </Project>

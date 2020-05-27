@@ -1,0 +1,120 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{29E93404-4ABB-458A-8743-4EB736BF8C18}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\source\libfcl\delphi\build\Build1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\libfcl\delphi\build\BuildDB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\liblcl\delphi\build\BuildLCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\liblcl\delphi\build\BuildLCL_DB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\liblcl\delphi\build\BuildLCL_AC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\progs\utils\nfe\build\BuildNFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\source\progs\utils\Registro\Libs\build\BuildReg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\Hd_ibo\Projetos\Delphi\build\BuildIB.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Build1">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1.dproj"/>
+    </Target>
+    <Target Name="Build1:Clean">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Build1:Make">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\Build1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildDB">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB.dproj"/>
+    </Target>
+    <Target Name="BuildDB:Clean">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildDB:Make">
+        <MSBuild Projects="..\..\source\libfcl\delphi\build\BuildDB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildLCL">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL.dproj"/>
+    </Target>
+    <Target Name="BuildLCL:Clean">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildLCL:Make">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildLCL_DB">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB.dproj"/>
+    </Target>
+    <Target Name="BuildLCL_DB:Clean">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildLCL_DB:Make">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_DB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildLCL_AC">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_AC.dproj"/>
+    </Target>
+    <Target Name="BuildLCL_AC:Clean">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_AC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildLCL_AC:Make">
+        <MSBuild Projects="..\..\source\liblcl\delphi\build\BuildLCL_AC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildNFe">
+        <MSBuild Projects="..\..\source\progs\utils\nfe\build\BuildNFe.dproj"/>
+    </Target>
+    <Target Name="BuildNFe:Clean">
+        <MSBuild Projects="..\..\source\progs\utils\nfe\build\BuildNFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildNFe:Make">
+        <MSBuild Projects="..\..\source\progs\utils\nfe\build\BuildNFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildReg">
+        <MSBuild Projects="..\..\source\progs\utils\Registro\Libs\build\BuildReg.dproj"/>
+    </Target>
+    <Target Name="BuildReg:Clean">
+        <MSBuild Projects="..\..\source\progs\utils\Registro\Libs\build\BuildReg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildReg:Make">
+        <MSBuild Projects="..\..\source\progs\utils\Registro\Libs\build\BuildReg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildIB">
+        <MSBuild Projects="D:\Hd_ibo\Projetos\Delphi\build\BuildIB.dproj"/>
+    </Target>
+    <Target Name="BuildIB:Clean">
+        <MSBuild Projects="D:\Hd_ibo\Projetos\Delphi\build\BuildIB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildIB:Make">
+        <MSBuild Projects="D:\Hd_ibo\Projetos\Delphi\build\BuildIB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Build1;BuildDB;BuildLCL;BuildLCL_DB;BuildLCL_AC;BuildNFe;BuildReg;BuildIB"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Build1:Clean;BuildDB:Clean;BuildLCL:Clean;BuildLCL_DB:Clean;BuildLCL_AC:Clean;BuildNFe:Clean;BuildReg:Clean;BuildIB:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Build1:Make;BuildDB:Make;BuildLCL:Make;BuildLCL_DB:Make;BuildLCL_AC:Make;BuildNFe:Make;BuildReg:Make;BuildIB:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
