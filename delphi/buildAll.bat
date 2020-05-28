@@ -182,7 +182,7 @@ if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\W
 
 set unitsSave=%units%
 set unitsSave2=%units%;%OutputDCUs%
-set units=%units%;d:\Projects\source\delphi\Componentes\Quickrep5
+set units=%units%;d:\Projects\source\liblcl\delphi\Components\Quickrep5
 
 set aliasesSave=%aliases%
 set aliases=%aliases%;data
