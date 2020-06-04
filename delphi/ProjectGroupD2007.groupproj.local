@@ -4,6 +4,6 @@
     <Transaction>2020/05/21 13:48:40.322.groupproj,D:\projects\source\libfcl\delphi\build\ProjectGroupD2007.groupproj=D:\projects\builds\delphi\ProjectGroupD2007.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="Build1_D2007.exe"/>
+		<Projects ActiveProject="BuildLCL - D2007.exe"/>
 	</Default.Personality>
 </BorlandProject>
