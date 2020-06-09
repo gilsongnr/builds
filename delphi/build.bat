@@ -22,6 +22,13 @@ if "%1"=="D2007" goto ConfigD2007
 
 set dversion=xe
 set pathDelphi=c:\program files (x86)\embarcadero\studio\19.0\
+if not "%1"=="2" goto xecontinue
+
+set dversion=xe-com
+set pathDelphi=c:\program files (x86)\embarcadero\studio\20.0\
+
+:xecontinue
+
 set configDebug=-B -Q -TX.exe
 
 set configDebug=%configDebug% "-W-GARBAGE"
@@ -110,8 +117,9 @@ call :ShowCab (FCL)
 set includes=D:\projects\source\libfcl\includes
 set aliases=System;Winapi;System.Win;vcl
 set ExecPath=%ExecPath% %config%
-set units=
-set resources=
+rem set units="%pathDelphi%lib\win32\%configdir%"
+set units="%pathDelphi%lib\win32\%configdir%"
+set resources="%pathDelphi%lib\win32\release"
 
 echo . >> %OutputFile% 
 echo . >> %OutputFile% 
@@ -121,7 +129,7 @@ call :ExecuteCmd Build1.dpr
 if not %ERRORLEVEL% == 0 GOTO Error
 echo %msgSucess%
 
-set units=%pOutputDCUsFCL%
+set units=%pOutputDCUsFCL%;%units%
 
 
 
@@ -153,10 +161,12 @@ call :ShowCab (LCL)
 
 set DJedi=D25\win32
 if %dversion% == D2007 set DJedi=D11
-
-set units=%units%;%pathComps%jedi\350\jcl\lib\%DJedi%;%pathComps%jedi\350\jvcl\lib\%DJedi%
-set includes=%includes%;%pathComps%jedi\350\jvcl\common;%pathComps%jedi\350\jcl\source\include
-set resources=%pathComps%jedi\350\jvcl\resources;%delphi_res%
+set pjedi=%pathComps%jedi\350\
+rem set pjedijcl=%pjedi%jcl\source\
+set units=%units%;%pjedi%jcl\lib\%DJedi%;%pjedi%jvcl\lib\%DJedi%
+rem set units=%units%;%pjedijcl%common;;%pjedijcl%windows;%pjedi%jvcl\run;%pjedi%jvcl\devtools\JvExVCL\src_
+rem set includes=%includes%;%pathComps%jedi\350\jvcl\common;%pathComps%jedi\350\jcl\source\include
+set resources=%resources%;%pjedi%jvcl\resources;%delphi_res%
 
 if not %dversion% == D2007 set aliases=%aliases%;Vcl.Imaging;Vcl.Samples
 
@@ -290,6 +300,7 @@ echo ****************************************  >> %OutputFile%
 echo Delphi=%dversion% >> %OutputFile% 
 echo Units=%units% >> %OutputFile% 
 echo Includes=%includes% >> %OutputFile% 
+echo resources=%resources% >> %OutputFile% 
 echo DCUs=%pOutputDCUs% >> %OutputFile% 
 
 echo %cmdline% >> %OutputFile% 
