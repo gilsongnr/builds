@@ -165,7 +165,7 @@ set pjedi=%pathComps%jedi\350\
 rem set pjedijcl=%pjedi%jcl\source\
 set units=%units%;%pjedi%jcl\lib\%DJedi%;%pjedi%jvcl\lib\%DJedi%
 rem set units=%units%;%pjedijcl%common;;%pjedijcl%windows;%pjedi%jvcl\run;%pjedi%jvcl\devtools\JvExVCL\src_
-rem set includes=%includes%;%pathComps%jedi\350\jvcl\common;%pathComps%jedi\350\jcl\source\include
+set includes=%includes%;%pjedi%jvcl\common;%pjedi%jcl\source\include
 set resources=%resources%;%pjedi%jvcl\resources;%delphi_res%
 
 if not %dversion% == D2007 set aliases=%aliases%;Vcl.Imaging;Vcl.Samples
