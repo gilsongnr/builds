@@ -41,7 +41,7 @@ set configDebug=%configDebug% "-W^NO_RETVAL"
 set configDebug=%configDebug% "-W^USE_BEFORE_DEF"
 set configDebug=%configDebug% "-W^SUSPICIOUS_TYPECAST"
 set configDebug=%configDebug% "-W-WIDECHAR_REDUCED" 
-set configDebug=%configDebug% "-W-IMPLICIT_STRING_CAST"
+set configDebug=%configDebug% "-W^IMPLICIT_STRING_CAST"
 set configDebug=%configDebug% "-W^IMPLICIT_STRING_CAST_LOSS"
 set configDebug=%configDebug% "--inline:off"
 
