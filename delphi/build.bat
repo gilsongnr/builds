@@ -22,6 +22,7 @@ if "%1"=="D2007" goto ConfigD2007
 
 set dversion=xe
 set pathDelphi=c:\program files (x86)\embarcadero\studio\19.0\
+
 if not "%1"=="2" goto xecontinue
 
 set dversion=xe-com
@@ -29,6 +30,14 @@ set pathDelphi=c:\program files (x86)\embarcadero\studio\20.0\
 
 :xecontinue
 
+set ExecPath="%pathDelphi%bin\dcc32.exe" 
+set platform=Win32
+
+if not "%1"=="64" goto xecontinue2
+set ExecPath="%pathDelphi%bin\dcc64.exe" 
+set platform=Win64
+
+:xecontinue2
 set configDebug=-B -Q -TX.exe
 
 set configDebug=%configDebug% "-W-GARBAGE"
@@ -46,13 +55,13 @@ set configDebug=%configDebug% "-W^IMPLICIT_STRING_CAST_LOSS"
 set configDebug=%configDebug% "--inline:off"
 
 set configRelease=-$D0 -$L- -$Y- %configDebug%
-set ExecPath="%pathDelphi%bin\dcc32.exe" 
 
 goto Prompt
 
 :ConfigD2007
 
 set dversion=D2007
+set platform=Win32
 set pathDelphi=c:\program files (x86)\codegear\rad studio\5.0\
 set configDebug=-B -Q 
 
@@ -105,7 +114,7 @@ echo               Modo: %configdir%
 echo       Configuracao:(%config%)
 echo ********************************************
 
-set pathOutBase=%PathOrig%\lib\%dversion%\Win32\%configdir%
+set pathOutBase=%PathOrig%\lib\%dversion%\%platform%\%configdir%
 del %pathOutBase%\*.dcu
 
 rem ***************************************************************
@@ -117,9 +126,9 @@ call :ShowCab (FCL)
 set includes=D:\projects\source\libfcl\includes
 set aliases=System;Winapi;System.Win;vcl
 set ExecPath=%ExecPath% %config%
-rem set units="%pathDelphi%lib\win32\%configdir%"
-set units="%pathDelphi%lib\win32\%configdir%"
-set resources="%pathDelphi%lib\win32\release"
+rem set units="%pathDelphi%lib\%platform%\%configdir%"
+set units="%pathDelphi%lib\%platform%\%configdir%"
+set resources="%pathDelphi%lib\%platform%\release"
 
 echo . >> %OutputFile% 
 echo . >> %OutputFile% 
@@ -159,7 +168,7 @@ rem ***************************************************************
 set pOutputDCUs=%pathOutBase%\lcl
 call :ShowCab (LCL) 
 
-set DJedi=D25\win32
+set DJedi=D25\%platform%
 if %dversion% == D2007 set DJedi=D11
 set pjedi=%pathComps%jedi\350\
 rem set pjedijcl=%pjedi%jcl\source\
@@ -181,7 +190,7 @@ set units=%units%;%pOutputDCUs%
 set pOutputDCUs=%pathOutBase%\db
 call :ShowCab (LCL_DB) 
 
-if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\Win32\Release
+if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\%platform%\Release
 set unitsSave=%units%
 set units=%units%;%pOutputDCUs%;d:\Projects\source\liblcl\delphi\Components\Quickrep5
 
@@ -244,7 +253,7 @@ set includes=%includesSave%
 :skeepnfe
 set dversiontmp=d10_1
 if %dversion% == D2007 set dversiontmp=d2007
-set units=%units%;%pathComps%ibo\5_7\src\lib\%dversiontmp%\Win32\Release;
+set units=%units%;%pathComps%ibo\5_7\src\lib\%dversiontmp%\%platform%\Release;
 set includes=%includes%;d:\Projects\source\LibFCL\DB\includes
 set aliasesSave=%aliases%
 set aliases=%aliases%;data

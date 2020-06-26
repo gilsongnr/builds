@@ -24,6 +24,7 @@ rem if "%1"=="ib" goto IB
 
 set Aborted=0
 set dversion=D2007
+set platform=Win32
 set pathDelphi=c:\program files (x86)\codegear\rad studio\5.0\
 set configDebug=-B -Q 
 
@@ -64,6 +65,7 @@ set configDebug=%configDebug% "--inline:off"
 
 set configRelease=-$D0 -$L- -$Y- %configDebug%
 set ExecPath="%pathDelphi%bin\dcc32.exe" 
+set platform=Win32
 call :ExecuteVersionAll
 
 timeout /T 10
@@ -102,7 +104,7 @@ rem goto end
 rem @echo on
 
 rem ***************************************************************
-set pathOut=%PathOrig%\lib\%dversion%\Win32\%configdir%
+set pathOut=%PathOrig%\lib\%dversion%\%platform%\%configdir%
 del %pathOut%\*.dcu /s > deleteds.txt
 
 rem ***************************************************************
@@ -152,7 +154,7 @@ call :ShowCab (LCL)
 
 
 rem set paramextra= -NSSystem;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl;Vcl.Imaging;Vcl.Samples;Vcl.Touch;Vcl.Shell
-set DJedi=D25\win32
+set DJedi=D25\%platform%
 if %dversion% == D2007 set DJedi=D11
 
 set units=%units%;%pathComps%jedi\350\jcl\lib\%DJedi%;%pathComps%jedi\350\jvcl\lib\%DJedi%
@@ -178,7 +180,7 @@ set OutputDCUs=%pathOut%\db
 cd D:\projects\source\liblcl\delphi\build
 call :ShowCab (LCL_DB) 
 
-if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\Win32\Release
+if not %dversion% == D2007 set units=%units%;%pathComps%KBMTABLE\v7.71\lib\DXE\%platform%\Release
 
 set unitsSave=%units%
 set unitsSave2=%units%;%OutputDCUs%
@@ -237,11 +239,11 @@ set includes=%includesSave%
 
 rem goto error
 rem ***************************************************************
-rem set units=%units%;d:\projects\source\Delphi\build\%pathOut%\lcl;d:\projects\source\Delphi\Componentes\Quickrep5\lib\%dversion%\win32\Release
+rem set units=%units%;d:\projects\source\Delphi\build\%pathOut%\lcl;d:\projects\source\Delphi\Componentes\Quickrep5\lib\%dversion%\%platform%\Release
 set dversiontmp=d10_1
 if %dversion% == D2007 set dversiontmp=d2007
-set units=%units%;%pathComps%ibo\5_7\src\lib\%dversiontmp%\Win32\Release;
-rem echo -U%units% %pathComps%ibo\5_7\src\lib\d10_1\Win32\Release\
+set units=%units%;%pathComps%ibo\5_7\src\lib\%dversiontmp%\%platform%\Release;
+rem echo -U%units% %pathComps%ibo\5_7\src\lib\d10_1\%platform%\Release\
 set includes=%includes%;d:\Projects\source\LibFCL\DB\includes
 rem %ExecPath% -NS%aliases%;data -I%includes% -R%resources% -U%units% -NU%OutputDCUs% BuildIB.dpr %OutputCmd%
 set aliasesSave=%aliases%
