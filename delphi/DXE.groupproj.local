@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2020/05/26 21:48:02.000.129,D:\projects\builds\delphi\DXE.groupproj=D:\Hd_ibo\D2007\SuperPosto\Super Posto DXE.groupproj</Transaction>
+    <Transaction>2020/05/26 21:48:02.000.129,D:\Hd_ibo\D2007\SuperPosto\Super Posto DXE.groupproj=D:\projects\builds\delphi\DXE.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="D:\Hd_ibo\Projetos\Delphi\build\BuildIB.dproj"/>
+		<Projects ActiveProject="D:\projects\source\liblcl\delphi\build\BuildLCL.dproj"/>
 	</Default.Personality>
 </BorlandProject>
