@@ -21,8 +21,15 @@ rem echo ("%1")
 rem if "%1"=="nfe" goto nfe
 rem if "%1"=="ib" goto IB
 
-
 set Aborted=0
+
+rem goto Dxe
+
+
+rem echo Compilar D2007
+rem CHOICE /C SN /T 10 /D S 
+rem if %ERRORLEVEL% == 2 goto dxe
+
 set dversion=D2007
 set platform=Win32
 set pathDelphi=c:\program files (x86)\codegear\rad studio\5.0\
@@ -45,6 +52,7 @@ call :ExecuteVersionAll
 rem goto finish
 if not %Aborted% == 0  goto finish 
 
+rem :dxe
 set dversion=xe
 set pathDelphi=c:\program files (x86)\embarcadero\studio\19.0\
 set configDebug=-B -Q -TX.exe
