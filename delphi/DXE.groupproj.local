@@ -4,6 +4,6 @@
     <Transaction>2020/05/26 21:48:02.000.129,D:\Hd_ibo\D2007\SuperPosto\Super Posto DXE.groupproj=D:\projects\builds\delphi\DXE.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="D:\projects\source\libfcl\delphi\build\Build1.dproj"/>
+		<Projects ActiveProject="D:\projects\source\progs\utils\nfe\build\BuildNFe.dproj"/>
 	</Default.Personality>
 </BorlandProject>
